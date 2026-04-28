@@ -7,7 +7,7 @@
 - Frontend: Next.js App Router, `[locale]` route, React Query, Zustand, Axios API client, `fetch` streaming hook.
 - Backend: NestJS module per feature, controller/service/dto/domain/infrastructure 분리, TypeORM PostgreSQL repository, JWT guard.
 - Contract: `/api/v1` versioned REST API + `data: {...}\n\n` SSE event stream.
-- Auth: frontend localStorage token -> Bearer header -> backend `JwtAuthGuard` -> `CurrentUser`.
+- Auth: ID/password login -> JWT access token -> frontend localStorage token -> Bearer header -> backend `JwtAuthGuard` -> `CurrentUser`.
 
 ## Environment Variables
 
@@ -39,12 +39,17 @@ NEXT_PUBLIC_API_URL=http://localhost:4000
 REST responses should return plain JSON DTOs, not ORM schemas.
 
 ```text
+POST   /api/v1/auth/signup
+POST   /api/v1/auth/login
+GET    /api/v1/auth/me
 GET    /api/v1/chats
 GET    /api/v1/chats/:id
 POST   /api/v1/chats
 DELETE /api/v1/chats/:id
 POST   /api/v1/chats/:id/messages/stream
 ```
+
+Auth contract는 `.clinerules/authentication-id-password-jwt.md`를 우선한다.
 
 Stream events:
 
