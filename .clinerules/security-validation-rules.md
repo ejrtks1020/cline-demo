@@ -16,6 +16,15 @@
 - AI 응답을 HTML로 직접 렌더링하지 않는다. Markdown이 필요하면 sanitizer 또는 안전한 renderer 설정을 검토한다.
 - 에러 응답은 사용자에게 필요한 수준으로만 제공하고 내부 구현 세부사항은 숨긴다.
 
+## Authentication Security
+
+- 인증 구현의 상세 구조와 API 계약은 `docs/authentication-id-password-jwt.md`를 따른다.
+- password 원문, `passwordHash`, token, secret은 저장 목적 외 로그와 응답에 포함하지 않는다.
+- password hash는 `bcrypt` 또는 `argon2` 같은 검증된 라이브러리를 사용한다.
+- 로그인 실패 응답은 ID 존재 여부를 추측할 수 없게 일반화한다.
+- JWT payload에는 민감한 개인 정보나 password 관련 값을 넣지 않는다.
+- production에서는 `JWT_SECRET` 누락 시 앱이 시작되지 않게 한다.
+
 ## Configuration
 
 - 필수 env는 앱 시작 시 검증한다.

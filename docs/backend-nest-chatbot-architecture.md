@@ -1,4 +1,4 @@
-# Backend Architecture Rules: NestJS Chatbot
+# Backend Architecture: NestJS Chatbot
 
 이 프로젝트의 백엔드는 구조를 기준으로 만든다. NestJS 11, TypeORM, PostgreSQL, ID/password 기반 JWT 인증, Swagger, OpenAI 스트리밍을 기본 전제로 삼는다.
 
@@ -6,7 +6,7 @@
 
 - 런타임은 NestJS + TypeScript를 사용한다.
 - DB 접근은 TypeORM + PostgreSQL을 사용한다.
-- 인증은 `.clinerules/authentication-id-password-jwt.md`를 따른다.
+- 인증은 `docs/authentication-id-password-jwt.md`를 따른다.
 - 인증이 필요한 API는 `JwtAuthGuard`와 `CurrentUser` 데코레이터 패턴을 사용한다.
 - AI 응답 스트리밍은 OpenAI SDK와 SSE 형식의 `fetch` 스트림으로 제공한다.
 - 전역 API prefix는 `/api`, URI versioning 기본값은 `v1`이다. 실제 엔드포인트는 `/api/v1/...`가 된다.

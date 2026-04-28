@@ -1,4 +1,4 @@
-# Authentication Rules: ID/Password JWT
+# Authentication: ID/Password JWT
 
 이 프로젝트의 인증은 ID/password 기반 JWT 방식을 기본으로 한다. Google OAuth, 소셜 로그인, magic link는 별도 요구가 없는 한 구현하지 않는다.
 

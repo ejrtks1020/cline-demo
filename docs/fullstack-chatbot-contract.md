@@ -1,4 +1,4 @@
-# Fullstack Chatbot Contract Rules
+# Fullstack Chatbot Contract
 
 `cline-guide`에서 간단한 풀스택 챗봇, 핵심은 REST로 저장된 상태를 조회하고, `fetch` 스트림으로 AI 응답을 점진 표시하는 구조다.
 
@@ -49,7 +49,7 @@ DELETE /api/v1/chats/:id
 POST   /api/v1/chats/:id/messages/stream
 ```
 
-Auth contract는 `.clinerules/authentication-id-password-jwt.md`를 우선한다.
+Auth contract는 `docs/authentication-id-password-jwt.md`를 우선한다.
 
 Stream events:
 

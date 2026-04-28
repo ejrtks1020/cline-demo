@@ -1,4 +1,4 @@
-# Frontend Architecture Rules: Next.js Chatbot
+# Frontend Architecture: Next.js Chatbot
 
 이 프로젝트의 프론트엔드는 Next.js App Router, React 19, TypeScript, Tailwind CSS, next-intl, React Query, Zustand를 기본 전제로 삼는다.
 
