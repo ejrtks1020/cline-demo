@@ -8,7 +8,10 @@ export class OpenAiChatCompletionAdapter implements ChatCompletionPort {
   private readonly client: OpenAI;
 
   constructor(private readonly configService: ConfigService) {
-    this.client = new OpenAI({ apiKey: this.configService.get<string>('OPENAI_API_KEY') || 'missing-key' });
+    this.client = new OpenAI({
+      apiKey: this.configService.get<string>('OPENAI_API_KEY') || 'missing-key',
+      baseURL: this.configService.get<string>('OPENAI_BASE_URL'),
+    });
   }
 
   async *stream(messages: ModelMessage[]): AsyncIterable<string> {
