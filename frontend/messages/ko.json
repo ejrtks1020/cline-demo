@@ -1,0 +1,4 @@
+{
+  "auth": {"login": "로그인", "signup": "회원가입", "loginId": "아이디", "password": "비밀번호", "name": "이름", "submit": "제출"},
+  "chat": {"newChat": "새 채팅", "placeholder": "메시지를 입력하세요", "send": "전송", "logout": "로그아웃", "empty": "대화를 시작해보세요", "delete": "삭제"}
+}

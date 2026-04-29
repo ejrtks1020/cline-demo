@@ -1,7 +1,11 @@
 node_modules/
 dist/
 .next/
+coverage/
+.turbo/
 .env
 .env.local
+backend/.env
+frontend/.env.local
 *.log
 .DS_Store
