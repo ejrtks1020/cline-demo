@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import { Link } from '@/i18n/routing';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 
@@ -20,6 +21,8 @@ export function AuthForm({ mode, onSubmit }: { mode: 'login' | 'signup'; onSubmi
       <Input placeholder={t('password')} type="password" {...form.register('password')} />
       {mode === 'signup' && <Input placeholder={t('name')} {...form.register('name')} />}
       <Button type="submit">{t('submit')}</Button>
+      {mode === 'login' && <Link href="/signup" className="rounded-md border border-slate-300 px-3 py-2 text-center text-sm text-slate-700">{t('signup')}</Link>}
+      {mode === 'signup' && <Link href="/login" className="rounded-md border border-slate-300 px-3 py-2 text-center text-sm text-slate-700">{t('login')}</Link>}
     </form>
   );
 }
